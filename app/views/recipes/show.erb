@@ -8,6 +8,16 @@
     <li><%=@recipe.ingredients%></li>
 </ul>
 
+<form action='/recipes/<%=@recipe.id%>' method="post">
+<input type='hidden' name='_method' value="delete">
+<input type="submit" value="Delete Recipe">
+</form>
+
+
+
+
+<a href='/recipes/<%=@recipe.id%>/edit'> Edit </a>
 <a href='/users'> Member </a>
 <a href='/recipes'> Recipes </a>
 <a href='/favorites'> favorites </a>
+

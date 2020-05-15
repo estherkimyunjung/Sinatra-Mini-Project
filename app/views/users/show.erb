@@ -1,0 +1,21 @@
+<h3> Single Member's information </h3>
+
+<label>Member Name:</label>
+<h4> <%= @user.name %> </h4>
+
+<label>These are my favories:</label>
+<ul>
+<% @user.recipes.each do |recipe| %>
+    <a href="/recipes/<%=recipe.id%>">
+        <li><%= recipes.name %></li>
+    </a>
+<% end %>
+</ul>
+
+<a href="/users/<%= @user.id %>/edit"> Edit Member </a>
+
+<form action="/users/<%= @user.id %>" method="post">
+<input type="hidden" name="_method" value="delete">
+
+<input type="submit" value="Delete Member"/>
+</form>

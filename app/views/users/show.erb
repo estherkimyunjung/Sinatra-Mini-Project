@@ -7,7 +7,7 @@
 <ul>
 <% @user.recipes.each do |recipe| %>
     <a href="/recipes/<%=recipe.id%>">
-        <li><%= recipes.name %></li>
+        <li><%= recipe.name %></li>
     </a>
 <% end %>
 </ul>
@@ -19,3 +19,7 @@
 
 <input type="submit" value="Delete Member"/>
 </form>
+
+<a href='/users'> Member </a>
+<a href='/recipes'> Recipes </a>
+<a href='/favorites'> favorites </a>

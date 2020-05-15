@@ -27,8 +27,8 @@ class RecipeController < ApplicationController
 
     patch '/recipes/:id' do
         recipe = Recipe.find(params[:id])
-        recipe.update(name: params[:name], ingredients: params[:ingredients], rating:params[:ratihg])
-
+        recipe.update(name: params[:name], ingredients: params[:ingredients], rating:params[:rating])
+        redirect "/recipes/#{recipe.id}"
     end
 
     

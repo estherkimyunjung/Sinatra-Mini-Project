@@ -6,32 +6,42 @@ class UserController < ApplicationController
         erb :index
     end
 
-    # get '/users/new' do
-    #     @user = current_user
-    #     erb :new
-    # end
+    get '/users/new' do
+        erb :new
+    end
 
     get '/users/:id' do
         @user = current_user
         erb :show
     end
 
-    # post '/users'
-    #     user = User.create(name: params[:name])
-    #     redirect "/users/#{user.id}"
-    # end
+    get '/users/:id/edit' do
+        @user = current_user
+        erb :edit
+    end
 
-    # patch '/users/:id' do
-    #     user = current_user
-    #     user.update(name: params[:name])
+
+    post '/users' do
+        user = User.create(name: params[:name])
+        redirect "/users/#{user.id}"
+    end
+
+    patch '/users/:id' do
+        user = current_user
+        user.update(name: params[:name])
         
-    #     redirect "/users/#{user.id}"
-    # end
+        redirect "/users/#{user.id}"
+    end
+
+    delete '/users/:id' do
+        user = current_user
+        user.destroy
+        redirect '/users'
+    end
 
     def current_user
         @user = User.find(params[:id])
     end
-
 
 
 end

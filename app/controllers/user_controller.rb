@@ -1,6 +1,6 @@
 class UserController < ApplicationController
     set :views, "app/views/users"
-
+    
     get '/users' do
         @users = User.all 
         erb :index

@@ -1,6 +1,11 @@
 class FavoriteController < ApplicationController
     set :views, "app/views/favorites"
 
+    get '/' do
+        @users = User.all 
+        erb :home
+    end
+
     get '/favorites' do
         @favorites = Favorite.all 
         erb :index

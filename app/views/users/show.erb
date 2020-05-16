@@ -1,18 +1,17 @@
-<h3> Single Member's information </h3>
-
-<label>Member Name:</label>
-<h4> <%= @user.name %> </h4>
+<h1> <%= @user.name %>'s information </h1>
 
 <label>These are my favories:</label>
 <ul>
 <% @user.recipes.each do |recipe| %>
-    <a href="/recipes/<%=recipe.id%>">
-        <li><%= recipe.name %></li>
+        <li><a href="/recipes/<%=recipe.id%>">
+            <h3><%= recipe.name %></h3>
+        </a></li>
+        
     </a>
 <% end %>
 </ul>
 
-<a href="/users/<%= @user.id %>/edit"> Edit Member </a>
+<a href="/users/<%= @user.id %>/edit"> Edit Member Information</a><br><br>
 
 <form action="/users/<%= @user.id %>" method="post">
 <input type="hidden" name="_method" value="delete">
@@ -20,6 +19,6 @@
 <input type="submit" value="Delete Member"/>
 </form>
 
-<a href='/users'> Member </a>
-<a href='/recipes'> Recipes </a>
+<a href='/users'> Member </a>&nbsp; &nbsp;
+<a href='/recipes'> Recipes </a>&nbsp; &nbsp;
 <a href='/favorites'> favorites </a>

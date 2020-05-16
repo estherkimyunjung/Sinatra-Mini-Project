@@ -36,10 +36,4 @@ class RecipeController < ApplicationController
         recipe.destroy
         redirect '/recipes'
     end
-
-    
-   
-
-
-
 end

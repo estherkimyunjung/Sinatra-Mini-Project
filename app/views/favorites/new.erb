@@ -1,14 +1,15 @@
-<h4>create new favorites</h4>
+<h1>Create New Favorite</h1>
+
 <form action="/favorites" method='post'>
+<label for="recip_name">Recipe Name : </label>
+<input type="text" name="recipe.name" id="recip_name"/><br>
+<label for="recip_ing">Recipe Ingredients : </label>
+<input type="text" name="recipe.rating" id="recip_ing"/><br>
+<label for="recip_rate">Recipe Rating : </label>
+<input type="text" name="recip.rating" id="recip_rate"/><br>
+<label for="recip_comment">Comment : </label>
+<input type="text" name="comment" id="recip_comment"/><br><br>
 
-<label>Favorite Recipe Name:</label>
-<input type="text" name="recipe_name"/>
-<textarea name="ingredients" id="ingredients" cols="30" rows="10" placehold=""></textarea>
-
-<input type="submit"/>
-
+<input type="submit">
 </form>
 
-<a href='/users'> Member </a>
-<a href='/recipes'> Recipes </a>
-<a href='/favorites'> favorites </a>

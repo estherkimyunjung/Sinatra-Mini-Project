@@ -2,7 +2,6 @@ class FavoriteController < ApplicationController
     set :views, "app/views/favorites"
 
     get '/' do
-        @users = User.all 
         erb :home
     end
 
@@ -12,13 +11,18 @@ class FavoriteController < ApplicationController
     end
 
     get '/favorites/new' do
-        @favorite = current_fav
+        @recipes = Recipe.all
         erb :new
     end
 
     get '/favorites/:id' do
         @favorite = current_fav
         erb :show
+    end
+
+    post '/favorites' do
+        favorite = Favorite.new(params)
+        redirect "/favorite/#{favorite.id}"
     end
 
     def current_fav

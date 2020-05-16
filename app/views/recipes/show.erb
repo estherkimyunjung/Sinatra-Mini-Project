@@ -1,23 +1,16 @@
 <h1><%=@recipe.name%></h1>
 
-<label>Rating:<%=@recipe.rating%></label><br>
+<h3>Rating : <%=@recipe.rating%></h3>
+<h3>Ingredients : <%=@recipe.ingredients%></h3>
 
-
-<label>Ingredients</label>
-<ul>
-    <li><%=@recipe.ingredients%></li>
-</ul>
+<a href='/recipes/new'> Create New Recipe </a>&nbsp; &nbsp;
+<a href='/recipes/<%=@recipe.id%>/edit'> Edit Recipe</a><br><br>
 
 <form action='/recipes/<%=@recipe.id%>' method="post">
 <input type='hidden' name='_method' value="delete">
 <input type="submit" value="Delete Recipe">
 </form>
 
-
-
-
-<a href='/recipes/<%=@recipe.id%>/edit'> Edit </a>
-<a href='/users'> Member </a>
-<a href='/recipes'> Recipes </a>
+<a href='/users'> Member </a>&nbsp; &nbsp;
+<a href='/recipes'> Recipes </a>&nbsp; &nbsp;
 <a href='/favorites'> favorites </a>
-

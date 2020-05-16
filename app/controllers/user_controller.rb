@@ -20,16 +20,14 @@ class UserController < ApplicationController
         erb :edit
     end
 
-
     post '/users' do
-        user = User.create(name: params[:name])
+        user = User.create(params[:user])
         redirect "/users/#{user.id}"
     end
 
     patch '/users/:id' do
         user = current_user
         user.update(name: params[:name])
-        
         redirect "/users/#{user.id}"
     end
 
@@ -42,6 +40,4 @@ class UserController < ApplicationController
     def current_user
         @user = User.find(params[:id])
     end
-
-
 end

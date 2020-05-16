@@ -1,13 +1,13 @@
-<h4>all favorites</h4>
+<h1>All Favorites</h1>
 
-<ul> favorites: 
-<% @favorites.each do |favorite| %>
-    <a href="/favorites/<%= favorite.id%>">
-        <li> <%= favorite.recipe.name %> </li>
-    </a>
-<% end %>
+<ul>
+<% @favorites.each do |favorite|%>
+<li> <a href="/recipes/<%= favorite.recipe.id%>">
+    <%= favorite.recipe.name%></a></li>
+<% end%>
 </ul>
 
-<a href='/users'> Member </a>
-<a href='/recipes'> Recipes </a>
+<a href="/favorites/new"> Add New favorite</a><br>
+<a href='/users'> Member </a>&nbsp; &nbsp;
+<a href='/recipes'> Recipes </a>&nbsp; &nbsp;
 <a href='/favorites'> favorites </a>

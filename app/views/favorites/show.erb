@@ -1,7 +1,10 @@
-<h4>single favorite recipe :</h4>
+<h1>single favorite recipe :</h1>
 
-<p><%= favorite.recipe.name %></p>
 
-<a href='/users'> Member </a>
-<a href='/recipes'> Recipes </a>
-<a href='/favorites'> favorites </a>
+<h3><%= @favorite.recipe.name %></h3>
+<h3><%= @favorite.recipe.ingredients %></h3>
+<h3><%= @favorite.recipe.rating %></h3>
+
+<a href='/users'> Member </a>&nbsp; &nbsp;
+<a href='/recipes'> Recipes </a>&nbsp; &nbsp;
+<a href='/favorites'> Favorites </a>

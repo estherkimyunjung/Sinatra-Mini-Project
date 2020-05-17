@@ -6,7 +6,7 @@ class FavoriteController < ApplicationController
     end
 
     get '/favorites' do
-        @favorites = Favorite.all 
+        @recipes = Recipe.all
         erb :index
     end
 
@@ -20,8 +20,20 @@ class FavoriteController < ApplicationController
         erb :show
     end
 
+    get '/favorites/:id/edit' do
+        @favorite = current_fav
+        erb :edit
+    end
+
     post '/favorites' do
-        favorite = Favorite.new(params)
+        # binding.pry
+        favorite = Favorite.create(params)
+        redirect "/favorite/#{favorite.id}"
+    end
+
+    patch '/favorites' do
+        favorite = current_fav
+        favorite.update(name: params[:name])
         redirect "/favorite/#{favorite.id}"
     end
 

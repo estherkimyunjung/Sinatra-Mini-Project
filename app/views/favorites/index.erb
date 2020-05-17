@@ -1,13 +1,21 @@
-<h1>All Favorites</h1>
+<h1>Favorites Review List</h1>
 
 <ul>
-<% @favorites.each do |favorite|%>
-<li> <a href="/recipes/<%= favorite.recipe.id%>">
-    <%= favorite.recipe.name%></a></li>
-<% end%>
+    <% @recipes.each do |recipe|%>
+    <li><a href="/recipes/<%=recipe.id%>">
+        <%= recipe.name%>
+    </a></li>
+        <% recipe.favorites.each do |fav|%>
+        <p> Favorite Seloctor : <%= fav.user.name%><br>
+            Selector Comment : <%= fav.comment%> 
+        </p>
+        <% end%>
+    <% end%>
 </ul>
 
-<a href="/favorites/new"> Add New favorite</a><br>
+<a href="/favorites/new"> Add New favorite</a><br><br>
+
+<a href='/'> Home </a>&nbsp; &nbsp;
 <a href='/users'> Member </a>&nbsp; &nbsp;
 <a href='/recipes'> Recipes </a>&nbsp; &nbsp;
 <a href='/favorites'> favorites </a>

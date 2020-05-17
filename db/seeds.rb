@@ -11,8 +11,10 @@ recipe2 = Recipe.create(name:"Bread", ingredients:"Water,Flour,Eggs", rating:"2.
 recipe3 = Recipe.create(name:"Cake", ingredients:"Milk,Flour,Eggs,Chocolate", rating:"5.0")
 
 
-Favorite.create(user_id: user1.id, recipe_id: recipe1.id, comment: "This is my first")
-Favorite.create(user_id: user1.id, recipe_id: recipe2.id, comment: "This is my second")
-Favorite.create(user_id: user2.id, recipe_id: recipe1.id, comment: "This is my favor")
-Favorite.create(user_id: user3.id, recipe_id: recipe3.id, comment: "I like")
-Favorite.create(user_id: user2.id, recipe_id: recipe2.id, comment: "This is my favor always")
+Favorite.create(user_id: user1.id, recipe_id: recipe1.id, comment: "This is my first Mac and Cheese")
+Favorite.create(user_id: user1.id, recipe_id: recipe2.id, comment: "This is my second Bread")
+Favorite.create(user_id: user2.id, recipe_id: recipe1.id, comment: "This is my favor Mac and Cheese")
+Favorite.create(user_id: user3.id, recipe_id: recipe3.id, comment: "I like Cake")
+Favorite.create(user_id: user2.id, recipe_id: recipe2.id, comment: "This Bread is my favor always ")
+Favorite.create(user_id: user1.id, recipe_id: recipe3.id, comment: "This is my first Cake")
+Favorite.create(user_id: user2.id, recipe_id: recipe3.id, comment: "This Cake is my favor")

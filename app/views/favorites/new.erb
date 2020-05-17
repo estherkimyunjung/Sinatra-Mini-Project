@@ -1,15 +1,20 @@
-<h1>Create New Favorite</h1>
+<h1>Create Favorite Review</h1>
 
 <form action="/favorites" method='post'>
-<label for="recip_name">Recipe Name : </label>
-<input type="text" name="recipe.name" id="recip_name"/><br>
-<label for="recip_ing">Recipe Ingredients : </label>
-<input type="text" name="recipe.rating" id="recip_ing"/><br>
-<label for="recip_rate">Recipe Rating : </label>
-<input type="text" name="recip.rating" id="recip_rate"/><br>
-<label for="recip_comment">Comment : </label>
-<input type="text" name="comment" id="recip_comment"/><br><br>
+<label for="name">Recipe Name : </label>
+<input type="text" name="recipe[:name]" id="name"/><br>
+<label for="ingredients">Recipe Ingredients : </label>
+<input type="text" name="recipe[:ingredients]" id="ingredients"/><br>
+<label for="rating">Recipe Rating : </label>
+<input type="text" name="recipe[:rating]" id="rating"/><br>
+<label for="comment">Comment : </label>
+<input type="text" name="comment" id="comment"/><br><br>
 
 <input type="submit">
 </form>
 
+<a href='/favorites'> Back to Favorites List</a><br>
+
+<a href='/users'> Member </a>&nbsp; &nbsp;
+<a href='/recipes'> Recipes </a>&nbsp; &nbsp;
+<a href='/favorites'> favorites </a>
